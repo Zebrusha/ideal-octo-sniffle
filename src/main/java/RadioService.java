@@ -33,22 +33,6 @@ public class RadioService {
         }
     }
 
-    public void setToMaxChanel() {
-        curentRadioStation = 9;
-    }
-
-
-    public void increaseRadioMax() {
-        int target = curentRadioStation + 1;
-        setCurentRadioStation(target);
-
-    }
-
-    public void increaseRadioMin() {
-        int target = curentRadioStation + 1;
-        setCurentRadioStation(target);
-    }
-
     public void setCurentVolume(int newCurentVolume) {
         if (newCurentVolume < 0) {
             return;
