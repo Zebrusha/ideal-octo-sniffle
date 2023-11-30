@@ -15,7 +15,6 @@ public class RadioServiceTest {
         Assertions.assertEquals(expected, actual);
     }
 
-
     @Test
     public void shouldIncreaseTestchanelMax() {
         RadioService radio = new RadioService();

@@ -1,6 +1,6 @@
 public class RadioService {
-    public int curentRadioStation;
-    public int curentVolume;
+    private int curentRadioStation;
+    private int curentVolume;
 
     public int getCurentVolume() {
         return curentVolume;
@@ -22,32 +22,17 @@ public class RadioService {
         curentRadioStation = newCurentRadioStation;
     }
 
-    public void setCurentClic(int b) {
-        if (b == 1) {
+    public void setCurentClic(int NextorPrev) {
+        if (NextorPrev == 1) {
             int target = curentRadioStation + 1;
             setCurentRadioStation(target);
         }
-        if (b == 0) {
+        if (NextorPrev == 0) {
             int target = curentRadioStation - 1;
             setCurentRadioStation(target);
         }
     }
 
-    public void setToMaxChanel() {
-        curentRadioStation = 9;
-    }
-
-
-    public void increaseRadioMax() {
-        int target = curentRadioStation + 1;
-        setCurentRadioStation(target);
-
-    }
-
-    public void increaseRadioMin() {
-        int target = curentRadioStation + 1;
-        setCurentRadioStation(target);
-    }
 
     public void setCurentVolume(int newCurentVolume) {
         if (newCurentVolume < 0) {
@@ -59,12 +44,12 @@ public class RadioService {
         curentVolume = newCurentVolume;
     }
 
-    public void setCurentClicVolume(int b) {
-        if (b == 1) {
+    public void setCurentClicVolume(int PluseorMinus) {
+        if (PluseorMinus == 1) {
             int target = curentVolume + 1;
             setCurentVolume(target);
         }
-        if (b == 0) {
+        if (PluseorMinus == 0) {
             int target = curentVolume - 1;
             setCurentVolume(target);
         }
