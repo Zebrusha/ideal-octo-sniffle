@@ -22,17 +22,6 @@ public class RadioService {
         curentRadioStation = newCurentRadioStation;
     }
 
-    public void setCurentClic(int NextorPrev) {
-        if (NextorPrev == 1) {
-            int target = curentRadioStation + 1;
-            setCurentRadioStation(target);
-        }
-        if (NextorPrev == 0) {
-            int target = curentRadioStation - 1;
-            setCurentRadioStation(target);
-        }
-    }
-
     public void setCurentVolume(int newCurentVolume) {
         if (newCurentVolume < 0) {
             return;
@@ -40,17 +29,30 @@ public class RadioService {
         if (newCurentVolume > 100) {
             return;
         }
-        curentVolume = newCurentVolume;
+
     }
 
-    public void setCurentClicVolume(int PluseorMinus) {
-        if (PluseorMinus == 1) {
-            int target = curentVolume + 1;
-            setCurentVolume(target);
+    public void nextChanel() {
+        if (getCurentRadioStation() < 100) {
+            curentRadioStation = curentRadioStation + 1;
         }
-        if (PluseorMinus == 0) {
-            int target = curentVolume - 1;
-            setCurentVolume(target);
+    }
+
+    public void prevChanel() {
+        if (curentRadioStation > 0) {
+            curentRadioStation = curentRadioStation - 1;
+        }
+    }
+
+    public void increaseVolume() {
+        if (curentVolume < 100) {
+            curentVolume = curentVolume + 1;
+        }
+    }
+
+    public void decreaseVolume() {
+        if (curentVolume > 0) {
+            curentVolume = curentVolume - 1;
         }
     }
 

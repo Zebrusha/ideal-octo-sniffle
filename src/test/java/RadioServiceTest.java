@@ -19,7 +19,7 @@ public class RadioServiceTest {
     public void shouldIncreaseTestchanelMax() {
         RadioService radio = new RadioService();
         radio.setCurentRadioStation(9);
-        radio.setCurentClic(1);
+        radio.nextChanel();
 
 
         int expected = 0;
@@ -32,7 +32,7 @@ public class RadioServiceTest {
     public void shouldIncreaseTestchanelMin() {
         RadioService radio = new RadioService();
         radio.setCurentRadioStation(0);
-        radio.setCurentClic(0);
+        radio.prevChanel();
 
 
         int expected = 9;
@@ -45,7 +45,8 @@ public class RadioServiceTest {
     public void souldIncreaseTestVolume() {
         RadioService radio = new RadioService();
         radio.setCurentVolume(40);
-        radio.setCurentClicVolume(1);
+
+        radio.increaseVolume();
 
         int expected = 41;
         int actual = radio.getCurentVolume();
@@ -56,10 +57,10 @@ public class RadioServiceTest {
     @Test
     public void souldIncreaseTestVolumeMax() {
         RadioService radio = new RadioService();
-        radio.setCurentVolume(100);
-        radio.setCurentClicVolume(1);
+        radio.setCurentVolume(50);
+        radio.decreaseVolume();
 
-        int expected = 100;
+        int expected = 49;
         int actual = radio.getCurentVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -69,7 +70,7 @@ public class RadioServiceTest {
     public void souldIncreaseTestVolumeMin() {
         RadioService radio = new RadioService();
         radio.setCurentVolume(0);
-        radio.setCurentClicVolume(0);
+        radio.decreaseVolume();
 
         int expected = 0;
         int actual = radio.getCurentVolume();
