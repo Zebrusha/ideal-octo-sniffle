@@ -12,11 +12,9 @@ public class RadioService {
 
     public void setCurentRadioStation(int newCurentRadioStation) {
         if (newCurentRadioStation < 0) {
-
             return;
         }
         if (newCurentRadioStation > 9) {
-
             return;
         }
         curentRadioStation = newCurentRadioStation;

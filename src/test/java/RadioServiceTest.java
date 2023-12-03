@@ -65,6 +65,29 @@ public class RadioServiceTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    public void sholdIncreaseTestchanelLess() {
+        RadioService radio = new RadioService();
+        radio.setCurentRadioStation(-1);
+
+
+        int expected = 0;
+        int actual = radio.getCurentRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void sholdIncreaseTestChanelMore() {
+        RadioService radio = new RadioService();
+        radio.setCurentRadioStation(10);
+
+        int expected = 0;
+        int actual = radio.getCurentRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
 
     @Test
     public void souldIncreaseTestVolume() {
@@ -114,4 +137,26 @@ public class RadioServiceTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    public void souldIncreaseTestVolumeLess() {
+        RadioService radio = new RadioService();
+        radio.setCurentVolume(-1);
+
+
+        int expected = 0;
+        int actual = radio.getCurentVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shoulIncreaseTestVolumeMore() {
+        RadioService radio = new RadioService();
+        radio.setCurentVolume(101);
+
+        int expected = 0;
+        int actual = radio.getCurentVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
 }
