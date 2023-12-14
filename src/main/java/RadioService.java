@@ -2,6 +2,7 @@ public class RadioService {
     private int curentRadioStation;
     private int curentVolume;
 
+
     public int getCurentVolume() {
         return curentVolume;
     }
@@ -13,8 +14,7 @@ public class RadioService {
     public void setCurentRadioStation(int newCurentRadioStation) {
         if (newCurentRadioStation < 0) {
             return;
-        }
-        if (newCurentRadioStation > 9) {
+        } else if (newCurentRadioStation > 9) {
             return;
         }
         curentRadioStation = newCurentRadioStation;
@@ -23,8 +23,7 @@ public class RadioService {
     public void setCurentVolume(int newCurentVolume) {
         if (newCurentVolume < 0) {
             return;
-        }
-        if (newCurentVolume > 100) {
+        } else if (newCurentVolume > 100) {
             return;
         }
         curentVolume = newCurentVolume;
@@ -32,32 +31,39 @@ public class RadioService {
 
     public void nextChanel() {
         if (curentRadioStation < 9) {
-            curentRadioStation = curentRadioStation + 1;
-        }
-        if (curentRadioStation == 9) {
+            curentRadioStation += 1;
+        } else if (curentRadioStation > 9) {
+            curentRadioStation = 0;
+
+        } else {
             curentRadioStation = 0;
         }
+
     }
 
     public void prevChanel() {
         if (curentRadioStation > 0) {
-            curentRadioStation = curentRadioStation - 1;
-        }
-        if (curentRadioStation == 0) {
+            curentRadioStation -= 1;
+        } else if (curentRadioStation < 0) {
+            curentRadioStation = 0;
+        } else {
             curentRadioStation = 9;
         }
+
     }
+
 
     public void increaseVolume() {
         if (curentVolume < 100) {
-            curentVolume = curentVolume + 1;
+            curentVolume += 1;
         }
     }
 
     public void decreaseVolume() {
         if (curentVolume > 0) {
-            curentVolume = curentVolume - 1;
+            curentVolume -= 1;
         }
     }
+
 
 }

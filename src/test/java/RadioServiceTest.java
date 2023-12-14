@@ -39,6 +39,7 @@ public class RadioServiceTest {
         Assertions.assertEquals(expected, actual);
     }
 
+
     @Test
     public void shouldIncreaseTestchanelMax() {
         RadioService radio = new RadioService();
@@ -64,6 +65,7 @@ public class RadioServiceTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
 
     @Test
     public void sholdIncreaseTestchanelLess() {
@@ -137,6 +139,7 @@ public class RadioServiceTest {
         Assertions.assertEquals(expected, actual);
     }
 
+
     @Test
     public void souldIncreaseTestVolumeLess() {
         RadioService radio = new RadioService();
@@ -159,4 +162,32 @@ public class RadioServiceTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
+
+    @Test
+    public void shouldIncreaseTestchanel() {
+        RadioService radio = new RadioService();
+        radio.setCurentRadioStation(8);
+        radio.nextChanel();
+
+
+        int expected = 9;
+        int actual = radio.getCurentRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldIncreaseTestchanelNule() {
+        RadioService radio = new RadioService();
+        radio.setCurentRadioStation(1);
+        radio.prevChanel();
+
+
+        int expected = 0;
+        int actual = radio.getCurentRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
 }
