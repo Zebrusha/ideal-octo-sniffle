@@ -32,9 +32,6 @@ public class RadioService {
     public void nextChanel() {
         if (curentRadioStation < 9) {
             curentRadioStation += 1;
-        } else if (curentRadioStation > 9) {
-            curentRadioStation = 0;
-
         } else {
             curentRadioStation = 0;
         }
@@ -44,8 +41,6 @@ public class RadioService {
     public void prevChanel() {
         if (curentRadioStation > 0) {
             curentRadioStation -= 1;
-        } else if (curentRadioStation < 0) {
-            curentRadioStation = 0;
         } else {
             curentRadioStation = 9;
         }
