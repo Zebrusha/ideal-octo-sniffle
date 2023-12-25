@@ -1,7 +1,28 @@
 public class RadioService {
-    private int curentRadioStation;
-    private int curentVolume;
 
+    private int maxRadioStation = 10;
+    private int minRadistation = 0;
+    private int maxVolume = 100;
+    private int minVolume = 0;
+
+    private int curentRadioStation = minRadistation;
+    private int curentVolume = minVolume;
+
+    public RadioService(int maxRadioStation) {
+        this.maxRadioStation = maxRadioStation;
+    }
+
+    public RadioService() {
+        this.maxRadioStation = maxRadioStation;
+    }
+
+    private int newMaxRadioStation = maxRadioStation - 1;
+
+
+    public int getMaxRadioStation() {
+        maxRadioStation -= 1;
+        return maxRadioStation;
+    }
 
     public int getCurentVolume() {
         return curentVolume;
@@ -12,25 +33,25 @@ public class RadioService {
     }
 
     public void setCurentRadioStation(int newCurentRadioStation) {
-        if (newCurentRadioStation < 0) {
+        if (newCurentRadioStation < minRadistation) {
             return;
-        } else if (newCurentRadioStation > 9) {
+        } else if (newCurentRadioStation > maxRadioStation) {
             return;
         }
         curentRadioStation = newCurentRadioStation;
     }
 
     public void setCurentVolume(int newCurentVolume) {
-        if (newCurentVolume < 0) {
+        if (newCurentVolume < minVolume) {
             return;
-        } else if (newCurentVolume > 100) {
+        } else if (newCurentVolume > maxVolume) {
             return;
         }
         curentVolume = newCurentVolume;
     }
 
     public void nextChanel() {
-        if (curentRadioStation < 9) {
+        if (curentRadioStation < newMaxRadioStation) {
             curentRadioStation += 1;
         } else {
             curentRadioStation = 0;
@@ -39,23 +60,23 @@ public class RadioService {
     }
 
     public void prevChanel() {
-        if (curentRadioStation > 0) {
+        if (curentRadioStation > minRadistation) {
             curentRadioStation -= 1;
         } else {
-            curentRadioStation = 9;
+            curentRadioStation = newMaxRadioStation;
         }
 
     }
 
 
     public void increaseVolume() {
-        if (curentVolume < 100) {
+        if (curentVolume < maxVolume) {
             curentVolume += 1;
         }
     }
 
     public void decreaseVolume() {
-        if (curentVolume > 0) {
+        if (curentVolume > minVolume) {
             curentVolume -= 1;
         }
     }
