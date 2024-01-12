@@ -16,9 +16,6 @@ public class RadioService {
         this.maxRadioStation = maxRadioStation;
     }
 
-    private int newMaxRadioStation = maxRadioStation - 1;
-
-
     public int getMaxRadioStation() {
         maxRadioStation -= 1;
         return maxRadioStation;
@@ -50,8 +47,10 @@ public class RadioService {
         curentVolume = newCurentVolume;
     }
 
+    private int curentMaxRadioStation = maxRadioStation - 1;
+
     public void nextChanel() {
-        if (curentRadioStation < newMaxRadioStation) {
+        if (curentRadioStation < curentMaxRadioStation) {
             curentRadioStation += 1;
         } else {
             curentRadioStation = 0;
@@ -63,7 +62,7 @@ public class RadioService {
         if (curentRadioStation > minRadistation) {
             curentRadioStation -= 1;
         } else {
-            curentRadioStation = newMaxRadioStation;
+            curentRadioStation = curentMaxRadioStation;
         }
 
     }
