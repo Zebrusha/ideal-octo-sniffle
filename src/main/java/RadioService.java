@@ -11,10 +11,12 @@ public class RadioService {
 
     public RadioService(int numberRadioStations) {
         this.numberRadioStations = numberRadioStations;
+        this.maxRadioStation = numberRadioStations - 1;
     }
 
     public RadioService() {
         this.numberRadioStations = numberRadioStations;
+
     }
 
     public int getMaxRadioStation() {

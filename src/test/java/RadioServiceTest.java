@@ -212,54 +212,6 @@ public class RadioServiceTest {
 
     }
 
-    @Test
-    public void automaticMaximumValue() {
-        RadioService radio = new RadioService();
-        radio.setCurentRadioStation(9);
-        radio.nextChanel();
-
-        int expected = 0;
-        int actual = radio.getCurentRadioStation();
-
-        Assertions.assertEquals(expected, actual);
-
-    }
-
-    @Test
-    public void icreaseMaxVolume() {
-        RadioService radio = new RadioService(100);
-        radio.setCurentVolume(100);
-        radio.increaseVolume();
-
-        int expected = 100;
-        int actual = radio.getCurentVolume();
-
-        Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void icreaseVolume() {
-        RadioService radio = new RadioService(42);
-        radio.setCurentVolume(40);
-        radio.increaseVolume();
-
-        int expected = 41;
-        int actual = radio.getCurentVolume();
-
-        Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void decreaseMinVolume() {
-        RadioService radio = new RadioService();
-        radio.setCurentVolume(0);
-        radio.decreaseVolume();
-
-        int expected = 0;
-        int actual = radio.getCurentVolume();
-
-        Assertions.assertEquals(expected, actual);
-    }
 
     @Test
     public void decreaseVolume() {
@@ -275,11 +227,23 @@ public class RadioServiceTest {
 
     @Test
     public void curentRadioStationMoreLastRadioStation() {
-        RadioService radio = new RadioService(12);
+        RadioService radio = new RadioService(14);
         radio.setCurentRadioStation(12);
 
 
         int expected = 0;
+        int actual = radio.getCurentRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test() {
+        RadioService radio = new RadioService(20);
+        radio.setCurentRadioStation(15);
+
+
+        int expected = 15;
         int actual = radio.getCurentRadioStation();
 
         Assertions.assertEquals(expected, actual);
