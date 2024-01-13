@@ -227,7 +227,7 @@ public class RadioServiceTest {
 
     @Test
     public void icreaseMaxVolume() {
-        RadioService radio = new RadioService();
+        RadioService radio = new RadioService(100);
         radio.setCurentVolume(100);
         radio.increaseVolume();
 
@@ -239,7 +239,7 @@ public class RadioServiceTest {
 
     @Test
     public void icreaseVolume() {
-        RadioService radio = new RadioService();
+        RadioService radio = new RadioService(42);
         radio.setCurentVolume(40);
         radio.increaseVolume();
 
@@ -263,12 +263,24 @@ public class RadioServiceTest {
 
     @Test
     public void decreaseVolume() {
-        RadioService radio = new RadioService();
+        RadioService radio = new RadioService(50);
         radio.setCurentVolume(40);
         radio.decreaseVolume();
 
         int expected = 39;
         int actual = radio.getCurentVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void curentRadioStationMoreLastRadioStation() {
+        RadioService radio = new RadioService(12);
+        radio.setCurentRadioStation(12);
+
+
+        int expected = 0;
+        int actual = radio.getCurentRadioStation();
 
         Assertions.assertEquals(expected, actual);
     }

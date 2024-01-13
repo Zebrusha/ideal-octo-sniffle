@@ -1,23 +1,24 @@
 public class RadioService {
 
-    private int maxRadioStation = 10;
+    private int numberRadioStations = 10;
     private int minRadistation = 0;
+    private int maxRadioStation = numberRadioStations - 1;
     private int maxVolume = 100;
     private int minVolume = 0;
 
     private int curentRadioStation = minRadistation;
     private int curentVolume = minVolume;
 
-    public RadioService(int maxRadioStation) {
-        this.maxRadioStation = maxRadioStation;
+    public RadioService(int numberRadioStations) {
+        this.numberRadioStations = numberRadioStations;
     }
 
     public RadioService() {
-        this.maxRadioStation = maxRadioStation;
+        this.numberRadioStations = numberRadioStations;
     }
 
     public int getMaxRadioStation() {
-        maxRadioStation -= 1;
+        numberRadioStations = maxRadioStation;
         return maxRadioStation;
     }
 
@@ -25,9 +26,11 @@ public class RadioService {
         return curentVolume;
     }
 
+
     public int getCurentRadioStation() {
         return curentRadioStation;
     }
+
 
     public void setCurentRadioStation(int newCurentRadioStation) {
         if (newCurentRadioStation < minRadistation) {
@@ -38,6 +41,7 @@ public class RadioService {
         curentRadioStation = newCurentRadioStation;
     }
 
+
     public void setCurentVolume(int newCurentVolume) {
         if (newCurentVolume < minVolume) {
             return;
@@ -47,10 +51,9 @@ public class RadioService {
         curentVolume = newCurentVolume;
     }
 
-    private int curentMaxRadioStation = maxRadioStation - 1;
 
     public void nextChanel() {
-        if (curentRadioStation < curentMaxRadioStation) {
+        if (curentRadioStation < maxRadioStation) {
             curentRadioStation += 1;
         } else {
             curentRadioStation = 0;
@@ -62,7 +65,7 @@ public class RadioService {
         if (curentRadioStation > minRadistation) {
             curentRadioStation -= 1;
         } else {
-            curentRadioStation = curentMaxRadioStation;
+            curentRadioStation = maxRadioStation;
         }
 
     }
