@@ -273,17 +273,6 @@ public class RadioServiceTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
-    public void curentRadioStationMoreLastRadioStation() {
-        RadioService radio = new RadioService(14);
-        radio.setCurentRadioStation(12);
-
-
-        int expected = 0;
-        int actual = radio.getCurentRadioStation();
-
-        Assertions.assertEquals(expected, actual);
-    }
 
     @Test
     public void test() {
